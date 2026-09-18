@@ -5,6 +5,17 @@ const navLinks = [...document.querySelectorAll('.site-nav a[href^="#"]')];
 const sections = [...document.querySelectorAll('main section[id]')];
 const showMoreButton = document.querySelector('[data-show-more]');
 const extraPublications = [...document.querySelectorAll('.extra-publication')];
+const tickerTrack = document.querySelector('[data-ticker-track]');
+
+if (tickerTrack) {
+  const tickerGroup = tickerTrack.querySelector('.ticker-group');
+  if (tickerGroup) {
+    const duplicateGroup = tickerGroup.cloneNode(true);
+    duplicateGroup.setAttribute('aria-hidden', 'true');
+    duplicateGroup.querySelectorAll('a').forEach((link) => link.setAttribute('tabindex', '-1'));
+    tickerTrack.append(duplicateGroup);
+  }
+}
 
 const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
 const closeMenu = () => {
