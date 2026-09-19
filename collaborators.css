@@ -1,0 +1,79 @@
+.collaborators-page { background: var(--paper); }
+.page-header { background: rgba(251,250,247,.96); }
+.page-header .site-nav { color: var(--navy); }
+.page-header .site-nav a::after { background: var(--blue); }
+
+.collaborator-hero { position: relative; padding: 155px 0 75px; overflow: hidden; color: var(--white); background: var(--navy); }
+.collaborator-hero::after { content: ""; position: absolute; top: -290px; right: -160px; width: 650px; height: 650px; border: 120px solid rgba(98,198,194,.08); border-radius: 50%; }
+.collaborator-hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr minmax(320px, .72fr); gap: 80px; align-items: end; }
+.back-link { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 45px; color: rgba(255,255,255,.56); font-size: 12px; letter-spacing: .06em; transition: color .2s, transform .2s; }
+.back-link:hover { color: var(--accent); transform: translateX(-4px); }
+.collaborator-hero h1 { margin: 8px 0 5px; font: 400 clamp(58px, 8vw, 102px)/1 Georgia, "Songti SC", serif; }
+.collaborator-hero-en { margin: 0; color: rgba(255,255,255,.45); font: italic 18px Georgia, serif; }
+.author-record { padding: 26px 30px; border-top: 2px solid var(--accent); background: rgba(255,255,255,.055); backdrop-filter: blur(8px); }
+.record-label, .record-kicker { color: var(--cyan); font-size: 10px; font-weight: 700; letter-spacing: .18em; }
+.author-record dl { margin: 18px 0 0; }
+.author-record dl div { display: grid; grid-template-columns: 72px 1fr; gap: 18px; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.12); }
+.author-record dt { color: rgba(255,255,255,.42); font-size: 11px; }
+.author-record dd { margin: 0; color: rgba(255,255,255,.88); font-size: 12px; }
+
+.record-section { padding: 95px 0 130px; }
+.record-layout { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(55px, 8vw, 110px); align-items: start; }
+.record-sidebar { position: sticky; top: 115px; }
+.record-kicker { margin: 0 0 12px; color: var(--blue); }
+.record-sidebar h2 { margin: 0; color: var(--navy); font: 400 36px/1.2 Georgia, serif; }
+.record-sidebar > p:not(.record-kicker) { margin: 22px 0 28px; color: var(--muted); font-size: 13px; }
+.record-stats { margin: 0 0 30px; border-top: 1px solid var(--line); }
+.record-stats div { padding: 17px 0; display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.record-stats dt { color: var(--blue); font: 400 28px Georgia, serif; }
+.record-stats dd { margin: 0; color: var(--muted); font-size: 11px; }
+.source-link { color: var(--blue); border-bottom: 1px solid rgba(23,107,135,.35); font-size: 12px; font-weight: 700; }
+
+.record-tools { display: grid; grid-template-columns: minmax(250px, 1fr) auto; gap: 20px; align-items: center; }
+.search-field { height: 48px; padding: 0 15px; display: flex; align-items: center; gap: 11px; border: 1px solid var(--line); background: var(--white); }
+.search-field:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(23,107,135,.08); }
+.search-field svg { width: 18px; fill: none; stroke: var(--muted); stroke-width: 1.7; }
+.search-field input { width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; font-size: 13px; }
+.search-field input::placeholder { color: #929da6; }
+.filter-group { display: flex; gap: 5px; }
+.filter-button { min-height: 38px; padding: 0 13px; border: 1px solid var(--line); background: transparent; cursor: pointer; color: var(--muted); font-size: 11px; transition: color .2s, border-color .2s, background .2s; }
+.filter-button:hover, .filter-button.active { color: var(--white); border-color: var(--blue); background: var(--blue); }
+.filter-button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.result-heading { margin-top: 35px; padding: 0 0 13px; display: flex; justify-content: space-between; border-bottom: 2px solid var(--navy); color: var(--muted); font-size: 11px; letter-spacing: .04em; }
+.result-heading p { margin: 0; }
+.result-heading strong { color: var(--navy); font: 400 21px Georgia, serif; }
+.collaborator-records { margin: 0; padding: 0; list-style: none; }
+.collaborator-records li[hidden] { display: none; }
+.collaborator-records li { min-height: 88px; padding: 19px 13px 19px 5px; display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 18px; align-items: center; border-bottom: 1px solid var(--line); transition: padding-left .2s, background .2s; }
+.collaborator-records li:hover { padding-left: 16px; background: var(--white); }
+.record-rank { color: #a7b0b7; font: 12px Georgia, serif; }
+.collaborator-records h3 { margin: 0 0 3px; color: var(--navy); font: 400 clamp(17px, 2vw, 20px)/1.3 Georgia, serif; }
+.collaborator-records p { margin: 0; color: var(--muted); font-size: 11px; }
+.collaborator-records li > strong { min-width: 55px; color: var(--blue); font: 400 23px Georgia, serif; text-align: right; }
+.collaborator-records small { color: var(--muted); font: 11px "Segoe UI", sans-serif; }
+.no-results { padding: 55px 20px; color: var(--muted); border-bottom: 1px solid var(--line); text-align: center; }
+
+@media (max-width: 900px) {
+  .collaborator-hero-grid { grid-template-columns: 1fr; gap: 55px; }
+  .record-layout { grid-template-columns: 1fr; }
+  .record-sidebar { position: static; display: grid; grid-template-columns: 1fr 1fr; column-gap: 45px; }
+  .record-sidebar .record-kicker, .record-sidebar h2, .record-sidebar .source-link { grid-column: 1; }
+  .record-sidebar > p:not(.record-kicker), .record-stats { grid-column: 2; }
+  .record-sidebar > p:not(.record-kicker) { grid-row: 1 / span 2; margin-top: 0; }
+  .record-stats { grid-row: 3 / span 2; }
+  .record-tools { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .page-header .site-nav { color: var(--white); }
+  .collaborator-hero { padding: 125px 0 60px; }
+  .back-link { margin-bottom: 32px; }
+  .author-record { padding: 22px; }
+  .record-section { padding: 70px 0 90px; }
+  .record-sidebar { display: block; }
+  .record-sidebar > p:not(.record-kicker) { margin-top: 20px; }
+  .filter-group { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .filter-button { padding-inline: 6px; }
+  .result-heading span { display: none; }
+  .collaborator-records li { grid-template-columns: 38px minmax(0, 1fr) auto; gap: 10px; }
+}
