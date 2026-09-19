@@ -55,7 +55,9 @@ sections.forEach((section) => sectionObserver.observe(section));
 showMoreButton.addEventListener('click', () => {
   const expanded = showMoreButton.getAttribute('aria-expanded') === 'true';
   showMoreButton.setAttribute('aria-expanded', String(!expanded));
-  showMoreButton.querySelector('span').textContent = expanded ? '展开更多论文' : '收起论文';
+  showMoreButton.querySelector('span').textContent = expanded
+    ? showMoreButton.dataset.moreLabel
+    : showMoreButton.dataset.lessLabel;
   extraPublications.forEach((publication) => {
     publication.hidden = expanded;
     if (!expanded) requestAnimationFrame(() => publication.classList.add('visible'));
